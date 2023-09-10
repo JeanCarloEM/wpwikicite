@@ -1,0 +1,214 @@
+/*
+ * GUINAPRESS WIKICITE 1.0
+ */
+
+.reference,
+.references{
+  text-align: justify !important;
+  font-size: .9em;
+  padding: 0px 0px 0px 0px !important;
+}
+
+.reference{
+  font-size: .65em;
+  margin-left: .2em;
+}
+
+.references{
+  li{
+    list-style-type: decimal;
+    list-style-position: outside;
+    margin-left: 3em;
+  }
+
+  &.wikicite.reference_list{
+    > div.wikicite_expand,
+    > input[type='checkbox']{
+      position: absolute;
+      left: .1em;
+      top: -1em;
+      border: none;
+      border-radius: .25em;
+      padding: .25em;
+      cursor: pointer;
+      height: 2em;
+      width: 2em;
+    }
+
+    > input[type='checkbox'] + div.wikicite_expand{
+      z-index: 0;
+      background: rgba(70,70,70,.2);
+
+      &,*{
+        line-height: 1.5em;
+        text-align: center !important;
+        color: #fff;
+        font-weight: 900;
+      }
+    }
+
+    > input[type='checkbox']:hover + div.wikicite_expand{
+      background: rgba(70,70,70,.3);
+    }
+    > input[type='checkbox']:active + div.wikicite_expand{
+      background: rgba(70,70,70,.4);
+    }
+
+    > input[type='checkbox']{
+      z-index: 1;
+      opacity: 0;
+    }
+    
+    > input[type='checkbox'] + div.wikicite_expand + *{
+      margin-top: 2.5em;
+    }
+
+    > input[type='checkbox']:not(:checked) + div.wikicite_expand + *{      
+      max-height: 1px !important;
+      height: 1px !important;
+      opacity: 0;
+      overflow: hidden;
+    } 
+
+    > input[type='checkbox']:checked + div.wikicite_expand + *{
+      height: auto !important;
+      max-height: initial !important;
+      opacity: 1;
+    }
+
+    > input[type='checkbox'] + div.wikicite_expand + *,
+    > input[type='checkbox']:checked + div.wikicite_expand + *{
+      -moz-transition: all .5s ease;
+      -webkit-transition: all .5s ease;
+      -o-transition: all .5s ease;
+      transition: all .5s ease;
+    }
+  }
+}
+
+.reference a,
+.references a{
+  text-decoration: none;
+  font-style: normal;
+}
+
+.reference a:hover,
+.references a:hover{
+  text-decoration: underline;
+}
+
+.references .mw-cite-backlink sup{
+  font-style: italic !important;
+  font-weight: bold;
+  height: 100%;
+  line-height: 100%;
+}
+
+/*
+ * TIPSY
+ */
+.tipsy-arrow-n,
+.tipsy-arrow-s,
+.tipsy-arrow-e,
+.tipsy-arrow-w{
+  border-width: 1.15em !important;
+  z-index: 100001;
+}
+.tipsy-arrow-n { border-bottom-color: rgba(96,96,96,1); }
+.tipsy-arrow-s { border-top-color: rgba(96,96,96,1); }
+.tipsy-arrow-e { border-left-color: rgba(96,96,96,1); }
+.tipsy-arrow-w { border-right-color: rgba(96,96,96,1); }
+
+
+.tipsy{
+  &[role=tooltip]{
+    position: absolute;
+    font-size: 1em;
+    padding: 1.1em;
+    z-index: 100000;
+
+    -moz-border-radius: .5em;
+    -webkit-border-radius: .5em;
+
+    &,*, >*,.tipsy-inner {
+      max-height: initial !important;
+      height: auto !important;
+      white-space:normal;
+
+      em{
+        font-weight: normal;
+      }
+    }
+
+    .tipsy-inner {
+      background-color: #eee;
+      min-width: 150px;
+      max-width: 360px;
+      padding: .9em;
+      text-align: justify;
+      font-size: .8em !important;
+      line-height: 1.3em;
+
+      border: .15em solid #fff !important;
+      border-radius: .4em;
+      box-shadow: 0 0 2em .2em rgba(190,190,190,.7);
+
+      &, *, strong, b, em, i{
+        color: #000;
+      }
+    }
+
+    a{
+      color: #2b92db;
+      font-weight: bold;
+    }
+  }
+
+
+  &.tipsy-n .tipsy-arrow {
+    top: 0px;
+    left: 50%;
+    margin-left: -.55em;
+  }
+
+  &.tipsy-nw .tipsy-arrow {
+    top: 0;
+    left: .7em;
+  }
+
+  &.tipsy-ne .tipsy-arrow {
+    top: 0;
+    right: .7em;
+  }
+
+  &.tipsy-s .tipsy-arrow {
+    bottom: 0;
+    left: 50%;
+    margin-left: -.55em;
+  }
+
+  &.tipsy-sw .tipsy-arrow {
+    bottom: 0;
+    left: .7em;
+  }
+
+  &.tipsy-se .tipsy-arrow {
+    bottom: 0;
+    right: .7em;
+  }
+
+  &.tipsy-e .tipsy-arrow {
+    right: 0;
+    top: 50%;
+    margin-top: -.55em;
+
+  }
+
+  &.tipsy-w .tipsy-arrow {
+    left: 0;
+    top: 50%;
+    margin-top: -.55em;
+  }
+}
+
+
